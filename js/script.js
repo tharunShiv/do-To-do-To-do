@@ -68,5 +68,18 @@ function filterItems(e){
     var search = e.target.value.toLowerCase();
     // console.log(search);
     var items = document.getElementsByTagName('li');
-    
+    // gives a html collection 
+    // convert to array for flexibility
+    Array.from(items).forEach(function(item){
+      var itemName = item.firstChild.textContent;
+      //here the first child is the text(item)
+      // second chils is the Button X
+
+      // console.log(itemName);
+      if(itemName.toLowerCase().indexOf(search) != -1){
+          item.style.display = 'block';
+      } else {
+          item.style.display = 'none';
+      }
+        });
 }
