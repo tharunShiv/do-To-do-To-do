@@ -83,3 +83,19 @@ function filterItems(e){
       }
         });
 }
+
+// FUN PART //
+
+var body1 = document.getElementsByTagName('body');
+body1[0].addEventListener('mousemove', colorChange);
+
+function colorChange(e){
+    // console.log(e);
+    var r = (e.clientX % 255);
+    // console.log(r);
+    var g = ((e.clientY + 20) % 255);
+    var b = ((r+g) % 255);
+    document.getElementById('filter').style.border='6px solid rgb('+r+','+g+','+b+')';
+    document.getElementById('header-title').style.color='rgb('+r+','+g+','+b+')';
+}
+
