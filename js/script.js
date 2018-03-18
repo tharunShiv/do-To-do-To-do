@@ -89,13 +89,36 @@ function filterItems(e){
 var body1 = document.getElementsByTagName('body');
 body1[0].addEventListener('mousemove', colorChange);
 
+//listen from the checkbox
+var x=1;
+var checkBox = document.getElementById('checkbox');
+checkBox.addEventListener('click', changeVal);
+
+
+function changeVal(){
+    if(x){
+        x=0;
+        document.getElementById('filter').style.border='1px solid grey';
+        document.getElementById('header-title').style.color='white';
+    }else{
+        x=1;
+    }
+}
+
 function colorChange(e){
-    // console.log(e);
-    var r = (e.clientX % 255);
-    // console.log(r);
-    var g = ((e.clientY + 20) % 255);
-    var b = ((r+g) % 255);
-    document.getElementById('filter').style.border='6px solid rgb('+r+','+g+','+b+')';
-    document.getElementById('header-title').style.color='rgb('+r+','+g+','+b+')';
+    if(x){
+        // console.log(e);
+        var r = (e.clientX % 255);
+        // console.log(r);
+        var g = ((e.clientY + 20) % 255);
+        var b = ((r+g) % 255);
+        
+        var checkBox = document.getElementById('checkbox');
+        
+        
+        document.getElementById('filter').style.border='6px solid rgb('+r+','+g+','+b+')';
+        document.getElementById('header-title').style.color='rgb('+r+','+g+','+b+')';
+
+    }   
 }
 

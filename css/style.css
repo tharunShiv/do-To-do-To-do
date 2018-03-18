@@ -4,5 +4,18 @@ header {
 
 #filter {
     border:6px solid #f4f4f4;
+
+}
+
+.disable {
+    display:inline-block;
+}
+
+label {
+   
+    display:inline;
+}
+#checkbox {
     
+    display:inline
 }
